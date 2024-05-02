@@ -1,0 +1,70 @@
+*Git*
+Git é um controle de versão de código distríbuido. 
+
+COMANDOS GIT:
+
+git clone -> clona um repositótio Git existente para um novo diretório (pasta) local.
+
+git commit -> grava alterações no repositório.
+
+git pull -> "puxa" as alterações do repositório remoto para o local (busca e mescla).
+
+git push -> "empurra" as alterações do repositório local para o remoto.
+
+*GitHub*
+GitHub é uma plataforma de hospedagem de código para controle de versão com Git.
+
+*Configuração do Git*
+
+git config --global user.name "viniciusfernandoss"
+git config --global user.email "vinicius.senac.ads@gmail.com"
+git config --global init.defaultBranch main
+git config --global --list
+
+*conectando Git com GitHub*
+Clonando repositório privado do GitHub: Para clonar, é preciso de um token. Este token se cria no GitHub > Settings > Developer settings > Personal access tokens > Tokens (classic) > Generate new token > Generate new token (classic). Apos isso, use o comando git clone url (do repositorio) e aperte enter. Apos isso, ira pedir um login de acesso, e você trocarar para logar com token, copia e cola o token que você gerou e pronto, repositorio privado clonado.
+
+*criando e clonando repositorio*
+Em uma pasta do seu computador:
+1. entre no git bash com a pasta.
+COMANDOS:
+mkdir nome-da-pasta -> cria uma pasta
+cd nome-da-pasta/ -> entra na pasta com git
+git init -> transforma a pasta em um repositorio git
+ls -> exibe os arquivos que estão dentro da pasta
+git clone url (do repositorio) nome-da-pasta -> clona um repositorio com o nome que você quiser
+git remote add origin url (do repositorio) -> conecta o git com o github
+git status -> mostra os status do repositorio. mostrando as pastas que não foram salva no repositorio.
+git add nome-da-pasta -> adiciona a pasta no repositorio
+git add . -> adiciona todas as pastas no repositorio
+git commit -m"titulo do commit" -> salva as alterações no repositorio
+git log -> mostra os dados do commit
+touch .gitignore -> cria uma pasta que iginora todas as pastas que estão dentro dela no repositorio
+encho nome-da-pasta > .gitignore -> transfere a pasta para o pasta .gitignore
+rm -fr nome-da-pasta -> apaga a pasta do repositorio
+git restore nome-da-pasta -> restaura as modificações da pastagit 
+git reset id-do-commit ou nome-do-arquivo -> apaga todas as  alterações do commit e volta para o commit anterior (para ver o id do commit, de o comando git log)
+git reflog -> da as informações mais detalhadas dos commits
+git restore --staged nome-da-pasta -> restaura as alterações feita na pasta
+git push -u origin main -> empurra as alterações para o repositório remoto (github)
+git pull origin main -> puxa as alterações do repositório remoto (github) para o repositório local (git).
+git checkout -b nome-da-nova-branch -> cria uma nova branch
+git checkout nome-da-branch -> altera para branch que você digitou
+git branch -> lista as branchs do repositório
+git branch -v -> lista o ultimo commit de cada branch
+git merge nome-da-branch -> mescla a branch que você está para branch que você digitou
+git branch -d nome-da-branch -> apaga a branch que você digitou
+
+*Conflito de mesclagem em repositório de equipe*
+quando 
+ Quando você quiser empurrar as alterações do repositótio local para o remoto e aparece a mensagem de erro: ![rejected], você tera que da o comando git pull origin main > escolher qual alteração ira ficar > git add . > git commit -m "descrição" > git push -u origin main é pronto, mesclagem feita.
+
+COMANDO para facilitar a mesclagem:
+git fetch origin main -> com este comando, você baixa as modificações do remoto para o local sem mesclar
+git diff main origin/main -> mostra as diferenças 
+git merge origin/main -> mescla as duas 
+
+*Clonar um repositório, mas escolhendo uma branch especifica*
+COMANDO:
+git clone url --branch nome-da-branch --single-branch -> clona branch
+cd nome-da-branch/ -> entra na branch clonada
